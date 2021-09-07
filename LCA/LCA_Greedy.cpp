@@ -1,6 +1,7 @@
 /* Authors: Phan Quy Thinh - Chu Van An High School for the Gifted, Binh Dinh */
 // 07092021
 #include<bits/stdc++.h>
+
 using namespace std;
 #define maxn 300005
 #define pb push_back
@@ -10,8 +11,10 @@ ofstream fo("task.out");
 #define cin fi
 #define cout fo
 #endif // ONLINE_JUDGE
+
 int n,depth[maxn],par[maxn];
 vector<int> a[maxn];
+
 void init()
 {
     int m;
@@ -24,6 +27,7 @@ void init()
         a[y].pb(x);
     }
 }
+
 void dfs(int u,int p)
 {
     depth[u]=depth[p]+1;
@@ -32,6 +36,7 @@ void dfs(int u,int p)
         if (v==p) continue;
         else dfs(v,u);
 }
+
 int lca(int u,int v)
 {
     if (depth[u]<depth[v]) swap(u,v);
@@ -44,6 +49,7 @@ int lca(int u,int v)
     }
     return u;
 }
+
 void solve()
 {
     int test;
@@ -57,6 +63,7 @@ void solve()
     }
     //for (int i=1;i<=n;i++) cout<<depth[i]<<" ";
 }
+
 int main()
 {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
